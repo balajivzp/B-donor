@@ -1,0 +1,35 @@
+
+<div class="container login-container">
+  <div class="col-md-6 login-form-2 p-5">
+    <div *ngIf="message"  class="alert alert-success">
+      {{message}}
+    </div>
+      <h3> Register here!</h3>
+          <form (ngSubmit)="save(form)" #form="ngForm" >
+            <div class="form-group mb-3">
+                <input type="text" name="name" ngModel required class="form-control" placeholder="Name *" value="" />
+            </div>
+            <div class="form-group mb-3">
+                <input type="email" name="email" ngModel required class="form-control" placeholder="Email *" value="" />
+            </div>
+            <div class="form-group mb-3">
+                <input type="number" name="mobilenubmer" ngModel required class="form-control" placeholder="Mobile No *" value="" />
+            </div>
+            <div class="form-group mb-3">
+                <input type="text" name="address" ngModel required class="form-control" placeholder="Address *" value="" />
+            </div>
+            <div class="form-group mb-3">
+                <input type="text" name="city" ngModel required class="form-control" placeholder="City *" value="" />
+            </div>
+            <div class="form-group mb-3">
+                <input  type="text"  name="dob" ngModel required class="form-control" onfocus="(this.type='date')" onblur="(this.type='text')" placeholder="Dat Of Birth *" value="" />
+            </div>
+            <div class="form-group mb-3">
+                <input type="password" name="password" ngModel required class="form-control" placeholder="Your Password *" value="" />
+            </div>
+            <div class="form-group mb-3">
+                <input type="submit"  class="btnSubmit" value="Signup"/>
+            </div>
+          </form>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+  <h2 class="text-center">Search here!</h2>
+<div class="container">
+  <form (ngSubmit)="search(form)" #form="ngForm">
+    <div class="d-inline-flex form-group" >
+      <select  required class="form-select" name="blood_group">
+        <option disabled selected >Select Blood Group</option>
+        <option >A+</option>
+        <option >A-</option>
+        <option >B+</option>
+        <option >B-</option>
+        <option >O+</option>
+        <option >AB+</option>
+        <option >AB-</option>
+      </select>
+    </div>
+    <div class="d-inline-flex form-group ">
+      <input ngModel required class="form-control" type="text" name="city" placeholder="City">
+    </div>
+    <div class="d-inline-flex form-group">
+      <input  [disabled]="form.invalid" type="submit" class="form-control btn btn-outline-danger" value="Search">
+    </div>
+  </form>
+</div>
+<div *ngIf="isClicked" class="blood-details">
+  <app-blood-details></app-blood-details>
+</div>

@@ -1,0 +1,30 @@
+.login-form-2{
+    padding: 9%;
+    background: #ff0000;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+}
+.login-form-2 h3{
+    margin-top: -30px;
+    text-align: center;
+    margin-bottom: 8%;
+    color: #fff;
+    padding-bottom: 0;
+}
+.btnSubmit{
+    margin-left: 100px;
+    font-weight: 600;
+    width: 50%;
+    color: #282726;
+    background-color: white;
+    border: none;
+    border-radius: 1.5rem;
+    padding:2%;
+}
+input[type="submit"].btnSubmit:hover {
+  background: black;
+  color: white;
+}
+.login-container{
+  margin-top: 10px;
+  margin-left: 290px;
+}

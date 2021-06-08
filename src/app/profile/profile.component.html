@@ -1,0 +1,33 @@
+<div class="conatiner">
+  <div class="row">
+    <div class="col-md-6">
+      <h3 class="text-center">Profile</h3>
+      <form (ngSubmit)="update(form)" #form="ngForm" >
+        <div class="form-group mb-3">
+            <input type="text" name="name" ngModel required class="form-control"  [(ngModel)]="this.profile.name"  />
+        </div>
+        <div class="form-group mb-3">
+            <input type="email" readonly name="email" ngModel required class="form-control"  [(ngModel)]="this.profile.email" />
+        </div>
+        <div class="form-group mb-3">
+            <input type="number" name="mobilenubmer" ngModel required class="form-control"  [(ngModel)]="this.profile.mobilenumber" />
+        </div>
+        <div class="form-group mb-3">
+            <input type="text" name="address" ngModel required class="form-control"  [(ngModel)]="this.profile.address" />
+        </div>
+        <div class="form-group mb-3">
+            <input type="text" name="city" ngModel required class="form-control"  [(ngModel)]="this.profile.city" />
+        </div>
+        <div class="form-group mb-3">
+            <input  type="text"  name="dob" ngModel required class="form-control" onfocus="(this.type='date')" onblur="(this.type='text')"  [(ngModel)]="this.profile.dob" />
+        </div>
+        <div class="form-group mb-3">
+            <input type="password" name="password" ngModel required class="form-control"  [(ngModel)]="this.profile.password" />
+        </div>
+        <div class="form-group justify-content-center">
+            <input type="submit"  class="btnSubmit" value="Update"/>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

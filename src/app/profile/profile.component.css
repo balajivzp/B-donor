@@ -1,0 +1,21 @@
+
+.conatiner {
+  margin-left: 10%;
+}
+.row {
+  justify-content: center;
+}
+.btnSubmit{
+    margin-left: 100px;
+    font-weight: 600;
+    width: 50%;
+    color: #282726;
+    background-color: red;
+    border: none;
+    border-radius: 1.5rem;
+    padding:2%;
+}
+.btnSubmit:hover {
+  background: black;
+  color: white;
+}

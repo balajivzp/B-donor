@@ -1,0 +1,7 @@
+span {
+  display: inline-block;
+  margin-right: 3rem;
+}
+li {
+  border-color: red;
+}

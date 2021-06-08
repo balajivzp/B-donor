@@ -1,0 +1,49 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container login-container">
+  <h3 class="signUplink" routerLink="/signup">Signup here--></h3>
+            <div class="row">
+                <div class="col-md-6 login-form-1">
+                    <h3>User</h3>
+
+                    <div class="alert alert-warning" *ngIf='invalidUserLogin'>{{errorMessage}}</div>
+
+                        <div class="form-group">
+                            <input type="text" class="form-control" [(ngModel)]="userEmail" placeholder="Your Email *" value="" />
+                        </div>
+                        <div class="form-group">
+                            <input type="password" [(ngModel)]="userPassword"  class="form-control" placeholder="Your Password *" value="" />
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" (click)="onLoginUser()" class="btnSubmit" value="Login" />
+                        </div>
+                        <div class="form-group">
+                            <a href="#" class="btnForgetPwd">Forget Password?</a>
+                        </div>
+
+                </div>
+                <div class="col-md-6 login-form-2">
+                    <div class="login-logo">
+                        <img src="../../assets/images/blood.png" alt=""/>
+                    </div>
+                    <h3>Admin</h3>
+                    <div class="alert alert-warning" *ngIf='invalidAdminLogin'>{{errorMessage}}</div>
+                        <div class="form-group">
+                            <input type="text" [(ngModel)]="adminEmail"  class="form-control" placeholder="Your Email *" value="" />
+                        </div>
+                        <div class="form-group">
+                            <input type="password" [(ngModel)]="adminPassword"  class="form-control" placeholder="Your Password *" value="" />
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" (click)="onLoginAdmin()" class="btnSubmit" value="Login" />
+                        </div>
+                        <div class="form-group">
+
+                            <a href="#" class="btnForgetPwd" value="Login">Forget Password?</a>
+                        </div>
+                </div>
+            </div>
+        </div>

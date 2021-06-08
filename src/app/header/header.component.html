@@ -1,0 +1,17 @@
+
+<header>
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <div><a class="navbar-brand">
+        <i class="bi bi-droplet"></i> Blood Donor</a></div>
+
+
+      <ul class="navbar-nav navbar-collapse justify-content-end">
+              <li><a *ngIf="this.authService.isUserLoggedIn() && this.authService.userType() === 'user' " routerLink="/profile" class="nav-link">Profile</a></li>
+              <li><a *ngIf="this.authService.isUserLoggedIn() && this.authService.userType() === 'admin'" routerLink="/donor" class="nav-link">Add donor</a></li>
+              <li><a *ngIf="this.authService.isUserLoggedIn()" routerLink="/bloodbank" class="nav-link">Blood Bank</a></li>
+              <li><a *ngIf="!this.authService.isUserLoggedIn()"  routerLink="/login" class="nav-link">Login</a></li>
+              <li><a *ngIf="!this.authService.isUserLoggedIn()"  routerLink="/signup" class="nav-link">Signup</a></li>
+              <li><a *ngIf="this.authService.isUserLoggedIn()" (click)="onLogout()"  class="nav-link btn">Logout</a></li>
+      </ul>
+  </nav>
+</header>
