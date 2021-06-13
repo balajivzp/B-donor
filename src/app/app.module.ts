@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +14,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { BloodbankComponent } from './bloodbank/bloodbank.component';
 import { BloodDetailsComponent } from './blood-details/blood-details.component';
 import { DonorComponent } from './donor/donor.component';
+import { HttpInterceptorService} from './services/http-interceptor.service'
 
 @NgModule({
   declarations: [
@@ -31,8 +33,11 @@ import { DonorComponent } from './donor/donor.component';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorService, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

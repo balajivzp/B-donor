@@ -22,23 +22,23 @@ export class LoginComponent implements OnInit {
   }
 
   onLoginUser() {
-    if(this.authService.onUserLogin(this.userEmail, this.userPassword)) {
-        this.route.navigate(['/dashboard',this.userEmail])
-    }
-    else {
-      this.errorMessage = 'An Error Occured!'
-      this.invalidUserLogin = true
-    }
+    this.authService.onUserLogin(this.userEmail, this.userPassword).
+    subscribe(data => {
+      console.log(data);
+      this.route.navigate(['/dashboard', this.userEmail]);
+    }, error => {
+      this.errorMessage = 'An Error occured!';
+    })
   }
 
   onLoginAdmin() {
-    if(this.authService.onAdminLogin(this.adminEmail, this.adminPassword)) {
-        this.route.navigate(['/dashboard', this.adminEmail])
-    }
-    else {
-      this.errorMessage = 'An Error ocuured!'
-      this.invalidAdminLogin = true;
-    }
+    this.authService.onUserLogin(this.adminEmail, this.adminPassword).
+    subscribe(data => {
+      console.log(data);
+      this.route.navigate(['/dashboard', this.adminEmail]);
+    }, error => {
+      this.errorMessage = 'An Error occured!';
+    })
   }
 
 }
